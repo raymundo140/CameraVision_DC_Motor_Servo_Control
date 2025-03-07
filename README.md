@@ -83,7 +83,7 @@ Run **`motor_control_python.py`** to test motor control via color detection.
 - Important Notes
 
 Make sure that the **serial port** and **baud rate** in the .py code matches those used in the .ino.
-If you plan to run this module simultaneously with the servo control module, you must use a **separate serial channel** or a **different ESP32 board**, since a single serial port cannot be shared between two scripts at the same time.
+
 
 
    
