@@ -50,3 +50,68 @@ This project uses computer vision (Python & OpenCV) to control a DC motor and a 
 1. **Install Python Dependencies:**
    ```bash
    pip install opencv-python numpy pyserial
+   ```
+
+2. **Run codes**
+
+- Servo Control
+
+This module controls a servo using an ESP32 and a Python script.
+
+A. Upload ESP32 Code
+
+Open and upload **`servo_control_esp32.ino`** to the ESP32.
+
+B. Run the Python Script
+
+Run **`servo_control_python.py`** to test servo control via angle detection.
+
+- Important Notes
+
+Make sure that the **serial port** and **baud rate** in `servo_control_python.py` match those used in `servo_control_esp32.ino`.
+If you plan to run this module simultaneously with the motor control module, you must use a **separate serial channel** or a **different ESP32 board**, since a single serial port cannot be shared between two scripts at the same time.
+
+
+- Motor Control
+
+This module controls a DC motor (via an H-bridge) using an ESP32 and a Python script.
+
+A. Upload ESP32 Code
+
+Open and upload **`motor_control_esp32.ino`** to the ESP32.
+
+B. Run the Python Script
+
+Run **`motor_control_python.py`** to test motor control via color detection.
+
+- Important Notes
+
+Make sure that the **serial port** and **baud rate** in `motor_control_python.py` match those used in `motor_control_esp32.ino`.
+If you plan to run this module simultaneously with the servo control module, you must use a **separate serial channel** or a **different ESP32 board**, since a single serial port cannot be shared between two scripts at the same time.
+
+
+   
+## How It Works
+
+### Servo Control
+- **Image Processing:**  
+  The Python script captures frames from the webcam, processes them (e.g., edge detection, Hough Transform) to calculate the angle of a detected line.
+- **Command Transmission:**  
+  The computed angle is sent via serial communication to the ESP32.
+- **Servo Adjustment:**  
+  The ESP32 receives the angle and adjusts the servo position accordingly using the ESP32Servo library.
+
+### Motor Control
+- **Color Detection:**  
+  The Python script converts each frame to the HSV color space and applies color masks to detect red, green, or yellow.
+- **Speed Determination:**  
+  Depending on the predominant color:
+  - **Red:** Speed value of 255  
+  - **Green:** Speed value of 180  
+  - **Yellow:** Speed value of 110  
+  - **None:** Speed value of 0
+- **Command Transmission:**  
+  The chosen speed value is sent via serial to the ESP32.
+- **Motor Speed Control:**  
+  The ESP32 receives the speed value and controls a DC motor through an H-bridge using PWM.
+
