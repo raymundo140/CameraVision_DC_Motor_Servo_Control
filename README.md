@@ -54,7 +54,7 @@ This project uses computer vision (Python & OpenCV) to control a DC motor and a 
 
 2. **Run codes**
 
-- Servo Control
+1. Servo Control
 
 This module controls a servo using an ESP32 and a Python script.
 
@@ -72,7 +72,7 @@ Make sure that the **serial port** and **baud rate** in `servo_control_python.py
 If you plan to run this module simultaneously with the motor control module, you must use a **separate serial channel** or a **different ESP32 board**, since a single serial port cannot be shared between two scripts at the same time.
 
 
-- Motor Control
+2. Motor Control
 
 This module controls a DC motor (via an H-bridge) using an ESP32 and a Python script.
 
