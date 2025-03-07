@@ -13,20 +13,20 @@ This project uses computer vision (Python & OpenCV) to control a DC motor and a 
 
 ## Files
 
-- `servo_control_python.py`  
+- `servo.py`  
   Python script that captures camera input, calculates a line angle, and sends the angle over serial.
 
-- `servo_control_esp32.ino`  
+- `servo.ino`  
   ESP32 Arduino sketch that receives an angle and controls a servo (using ESP32Servo library) on a designated pin.
 
-- `motor_control_python.py`  
+- `motordc.py`  
   Python script that detects predominant colors and sends a speed value based on:  
   - Red: 255  
   - Green: 180  
   - Yellow: 110  
   - None: 0
 
-- `motor_control_esp32.ino`  
+- `motorDC.ino`  
   ESP32 Arduino sketch that receives the speed value and controls a DC motor through an H-bridge. The code uses PWM on an ENA pin (e.g., pin 32) along with two digital pins for motor direction (e.g., IN1 on pin 25 and IN2 on pin 26).
 
 ## Requirements
