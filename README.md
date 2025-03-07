@@ -43,7 +43,6 @@ This project uses computer vision (Python & OpenCV) to control a DC motor and a 
     - OpenCV (`opencv-python`)
     - NumPy
     - PySerial
-  - Arduino IDE with the [ESP32Servo](https://github.com/madhephaestus/ESP32Servo) library installed.
 
 ## Setup & Usage
 
