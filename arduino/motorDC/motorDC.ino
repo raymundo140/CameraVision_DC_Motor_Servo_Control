@@ -1,9 +1,9 @@
 #include <Arduino.h>
 
 // Configuración del PWM para la velocidad
-const int PWM_CHANNEL = 0;         // Canal PWM (0 a 15 disponibles en ESP32)
+const int PWM_CHANNEL = 0;         // Canal PWM 
 const int MOTOR_PWM_PIN = 32;        // Pin de salida PWM al puente H
-const int PWM_FREQUENCY = 5000;      // Frecuencia PWM en Hz (ajusta según tu motor/puente H)
+const int PWM_FREQUENCY = 5000;      // Frecuencia PWM en Hz 
 const int PWM_RESOLUTION = 8;        // Resolución de 8 bits (0-255)
 
 // Pines para controlar la dirección en el puente H
@@ -44,8 +44,6 @@ void loop() {
     if (speedValue > 255) speedValue = 255;
 
     // Controlar la dirección y velocidad:
-    // En este ejemplo se usa una dirección fija (avance). 
-    // Si se recibe 0 se detiene el motor, de lo contrario se aplica el PWM.
     if (speedValue == 0) {
       // Detener el motor: PWM a 0
       ledcWrite(PWM_CHANNEL, 0);

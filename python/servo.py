@@ -4,8 +4,8 @@ import serial
 import time
 
 # 1. Configurar el puerto Serial y velocidad
-ser = serial.Serial('COM5', 115200)  # Ajusta 'COM5' o el puerto que uses
-time.sleep(2)  # Espera un par de segundos para que el puerto se inicie
+ser = serial.Serial('COM5', 115200)  
+time.sleep(2)  
 
 # 2. Iniciar captura de la cámara
 cap = cv2.VideoCapture(0)  # 0 para la webcam por defecto
@@ -31,7 +31,7 @@ def procesar_imagen(frame):
     mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
     red_mask = cv2.bitwise_or(mask1, mask2)
     
-    # Opcional: aplicar una operación morfológica para reducir ruido
+    # Aplicar una operación morfológica para reducir ruido
     kernel = np.ones((5, 5), np.uint8)
     red_mask = cv2.morphologyEx(red_mask, cv2.MORPH_OPEN, kernel)
     
@@ -59,7 +59,7 @@ while True:
     # 3. Procesar imagen: obtener ángulo y máscara
     angle, red_mask = procesar_imagen(frame)
 
-    # 4. Enviar el ángulo por Serial (terminado con salto de línea)
+    # 4. Enviar el ángulo por Serial 
     mensaje = f"{angle}\n"
     ser.write(mensaje.encode('utf-8'))
 
@@ -68,8 +68,7 @@ while True:
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
     cv2.imshow("Frame", frame)
     
-    # Ahora sí podemos mostrar la máscara roja y los bordes, 
-    # pues tenemos 'red_mask' en esta parte del código
+    # Mostrar la máscara roja y los bordes, 
     cv2.imshow("Mascara Roja", red_mask)
     cv2.imshow("Bordes", cv2.Canny(red_mask, 50, 150))
 

@@ -3,9 +3,9 @@ import numpy as np
 import serial
 import time
 
-# Configurar el puerto Serial y la velocidad (ajusta el puerto si es necesario)
+# Configurar el puerto Serial y la velocidad 
 ser = serial.Serial('COM5', 115200)
-time.sleep(2)  # Espera para que se inicie la comunicación
+time.sleep(2)  
 
 # Iniciar captura de la cámara
 cap = cv2.VideoCapture(0)
@@ -19,7 +19,7 @@ def detectar_color(frame):
     """
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     
-    # Máscara para ROJO (se requieren dos rangos)
+    # Máscara para ROJO
     lower_red1 = np.array([0, 100, 100])
     upper_red1 = np.array([10, 255, 255])
     lower_red2 = np.array([160, 100, 100])
@@ -28,7 +28,7 @@ def detectar_color(frame):
     mask_red2 = cv2.inRange(hsv, lower_red2, upper_red2)
     mask_red = cv2.bitwise_or(mask_red1, mask_red2)
     
-    # Máscara para VERDE (rango ajustado)
+    # Máscara para VERDE 
     lower_green = np.array([40, 70, 70])
     upper_green = np.array([80, 255, 255])
     mask_green = cv2.inRange(hsv, lower_green, upper_green)
@@ -72,7 +72,7 @@ while True:
         speed = 210
     elif color == "RED":
         speed = 255
-    else:  # Si no se detecta ninguno de los colores (o ninguno supera el umbral)
+    else:  # Si no se detecta ninguno de los colores 
         speed = 0
     
     # Enviar el valor por Serial, finalizando con salto de línea

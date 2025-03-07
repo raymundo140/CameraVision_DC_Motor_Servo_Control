@@ -3,10 +3,10 @@
 
 Servo myServo;
 
-// Definir el pin para el servo y los pulsos mínimo/máximo (nombres renombrados)
+// Definir el pin para el servo y los pulsos mínimo/máximo 
 const int SERVO_PIN = 32;
-const int SERVO_MIN_PULSE = 500;   // Pulso mínimo en microsegundos (ajusta según tu servo)
-const int SERVO_MAX_PULSE = 2400;  // Pulso máximo en microsegundos (ajusta según tu servo)
+const int SERVO_MIN_PULSE = 500;   // Pulso mínimo en microsegundos 
+const int SERVO_MAX_PULSE = 2400;  // Pulso máximo en microsegundos 
 
 void setup() {
   Serial.begin(115200);
