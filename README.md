@@ -66,10 +66,6 @@ B. Run the Python Script
 
 Run **`servo_control_python.py`** to test servo control via angle detection.
 
-- Important Notes
-
-Make sure that the **serial port** and **baud rate** in `servo_control_python.py` match those used in `servo_control_esp32.ino`.
-If you plan to run this module simultaneously with the motor control module, you must use a **separate serial channel** or a **different ESP32 board**, since a single serial port cannot be shared between two scripts at the same time.
 
 
 * Motor Control
@@ -86,7 +82,7 @@ Run **`motor_control_python.py`** to test motor control via color detection.
 
 - Important Notes
 
-Make sure that the **serial port** and **baud rate** in `motor_control_python.py` match those used in `motor_control_esp32.ino`.
+Make sure that the **serial port** and **baud rate** in the .py code matches those used in the .ino.
 If you plan to run this module simultaneously with the servo control module, you must use a **separate serial channel** or a **different ESP32 board**, since a single serial port cannot be shared between two scripts at the same time.
 
 
