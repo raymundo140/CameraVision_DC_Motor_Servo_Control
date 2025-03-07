@@ -103,8 +103,8 @@ Make sure that the **serial port** and **baud rate** in the .py code matches tho
 - **Speed Determination:**  
   Depending on the predominant color:
   - **Red:** Speed value of 255  
-  - **Green:** Speed value of 180  
-  - **Yellow:** Speed value of 110  
+  - **Green:** Speed value of 210  
+  - **Yellow:** Speed value of 180  
   - **None:** Speed value of 0
 - **Command Transmission:**  
   The chosen speed value is sent via serial to the ESP32.
