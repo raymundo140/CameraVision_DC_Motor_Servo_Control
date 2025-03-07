@@ -1,5 +1,5 @@
 # CameraVision_DC_Motor_Servo_Control
- This project uses computer vision with Python and OpenCV to analyze real-time camera input. It detects specific colors and computes line angles to determine object position and orientation. Based on the detected color (red, green, or yellow) and the calculated angle, commands are sent via serial communication to an ESP32. The ESP32 then controls a DC motor (via an H-bridge) and a servo motor to adjust speed and position, achieving vision-driven motor control."
+ This project uses computer vision with Python and OpenCV to analyze real-time camera input. It detects specific colors and computes line angles to determine object position and orientation. Based on the detected color (red, green, or yellow) and the calculated angle, commands are sent via serial communication to an ESP32. The ESP32 then controls a DC motor (via an H-bridge) and a servo motor to adjust speed and position, achieving vision-driven motor control.
 
 This project uses computer vision (Python & OpenCV) to control a DC motor and a servo via an ESP32 through serial communication. The system is divided into two modules:
 
