@@ -22,8 +22,8 @@ This project uses computer vision (Python & OpenCV) to control a DC motor and a 
 - `motordc.py`  
   Python script that detects predominant colors and sends a speed value based on:  
   - Red: 255  
-  - Green: 180  
-  - Yellow: 110  
+  - Green: 210  
+  - Yellow: 180  
   - None: 0
 
 - `motorDC.ino`  
